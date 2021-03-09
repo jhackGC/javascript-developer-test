@@ -49,7 +49,7 @@ const getArnieQuotes = async (urls) => {
     const promiseResults = await Promise.allSettled(allPromises);
 
     promiseResults.forEach(async (promiseResult) => {
-      const parsedBody = JSON.parse(promiseResult.value.body);
+      const parsedBody = JSON.parse(promiseResult.value.body); // error -> you should check for promiseResult, value and body to be defined ...
       // check the result and create result object
       if (promiseResult.value.status === 200) {
         // all good
